@@ -1,6 +1,13 @@
 const fs = require('fs');
 const server = require('http').createServer()
-const io = require('socket.io')(server)
+//const io = require('socket.io')(server)
+const io = require('socket.io')(server, {
+  cors: {
+    origin: '*',
+  }
+},{
+  allowEIO3: true // false by default
+});
 const onlineUers = new Map();
 const express = require('express')
 const app = express()
