@@ -533,7 +533,7 @@ function getMessageGrp(fileName,io) {
 
 function getLastMessage(fileName,io) {
   console.log("get last mesahe");
-  var fileNameFull ="lastChat/"+ fileName+".json";
+  var fileNameFull ="lastchat/"+ fileName+".json";
   console.log(fileNameFull);
   fs.exists(fileNameFull, function(exists) {
   if(exists) {
@@ -698,7 +698,7 @@ function checkIfFnd(self,fnd,io) {
 function sendLast(id,body,partner) {
   var par = partner;
 
- var  fileNameFullForLast ="lastChat/"+ id+".json";
+ var  fileNameFullForLast ="lastchat/"+ id+".json";
    
 
   function write(){
