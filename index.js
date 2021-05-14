@@ -33,7 +33,7 @@ io.on('connection', function (client) {
     save(fileName,message,io);
     
     
-    console.log(data);
+    console.log("message sent");
     
     // console.log(onlineUers);
   })
@@ -46,7 +46,7 @@ io.on('connection', function (client) {
     saveGrp(fileName,message,io);
     
     
-    console.log(data);
+    console.log("message sent");
     
     // console.log(onlineUers);
   })
@@ -84,7 +84,7 @@ io.on('connection', function (client) {
     getMessage(fileName,io);
     
     
-    console.log("get  last message");
+    
     
     // console.log(onlineUers);
   })
@@ -96,7 +96,7 @@ io.on('connection', function (client) {
     getMessageGrp(fileName,io);
     
     
-    console.log("get  last message");
+    
     
     // console.log(onlineUers);
   })
@@ -108,7 +108,7 @@ io.on('connection', function (client) {
     //getAllUsers(data.uid,io);
     
     
-    console.log("get  last message");
+    
     
     // console.log(onlineUers);
   })
@@ -119,7 +119,7 @@ io.on('connection', function (client) {
   client.on('getUserProfile', function  name(data) {
     //onlineUers[client.id] = data.userId;
     var fileName = data.uid;
-    console.log("getUserProfile");
+    
     
     //getUserProfile(fileName,io);
     
@@ -139,7 +139,7 @@ io.on('connection', function (client) {
     getLastMessage(fileName,io);
     
     
-    console.log("get getLastMesage");
+   
     
     // console.log(onlineUers);
   })
@@ -152,7 +152,7 @@ io.on('connection', function (client) {
    // getMyFnds(fileName,io);
     
     
-    console.log("get getMyFnds");
+    
     
     // console.log(onlineUers);
   })
@@ -165,7 +165,7 @@ io.on('connection', function (client) {
     checkIfFnd(data.self,data.fnd,io);
     
     
-    console.log("check if fnd");
+    
     
     // console.log(onlineUers);
   })
@@ -179,7 +179,7 @@ io.on('connection', function (client) {
      
     //console.log(onlineUers);
     io.emit("callincome"+data.partner,data);
-     console.log("callincome "+data.partner);
+     console.log("call dialed");
   })
 
 
@@ -190,7 +190,7 @@ io.on('connection', function (client) {
      io.emit("any","any");
     //console.log(onlineUers);
     io.emit("ringing"+data.id,data.id);
-     console.log("ringing "+data.id);
+     console.log("ringing ");
   })
 
 
@@ -201,7 +201,7 @@ io.on('connection', function (client) {
      io.emit("any","any");
     //console.log(onlineUers);
     io.emit("callerCandidates"+data.id,data.cand);
-     console.log("callerCandidates "+data.id);
+    
   })
 
 
@@ -211,7 +211,7 @@ io.on('connection', function (client) {
      io.emit("any","any");
     //console.log(onlineUers);
     io.emit("calleeCandidates"+data.id,data.cand);
-     console.log("calleeCandidates "+data.id);
+    
   })
 
   client.on('offer', function  name(data) {
@@ -219,7 +219,7 @@ io.on('connection', function (client) {
      io.emit("any","offer");
     //console.log(onlineUers);
     io.emit("offer"+data.id,data.offer);
-     console.log("offer "+data.offer);
+    
   })
 
   client.on('answer', function  name(data) {
@@ -227,7 +227,7 @@ io.on('connection', function (client) {
      io.emit("any","any");
     //console.log(onlineUers);
     io.emit("answer"+data.id,data.answer);
-     console.log("answer "+data.answer);
+    
   })
 
 
@@ -237,7 +237,7 @@ io.on('connection', function (client) {
      io.emit("any","offerNneedAnswer");
     //console.log(onlineUers);
     io.emit("offerNneedAnswer"+data.id,data.offer);
-     console.log("offerNneedAnswer "+data.offer);
+    
   })
 
 
@@ -247,7 +247,7 @@ io.on('connection', function (client) {
      io.emit("any","offerNasResponse");
     //console.log(onlineUers);
     io.emit("offerNasResponse"+data.id,data.offer);
-     console.log("offerNasResponse "+data.offer);
+     
   })
 
 
@@ -256,7 +256,7 @@ io.on('connection', function (client) {
      io.emit("any","answerNasResponse");
     //console.log(onlineUers);
     io.emit("answerNasResponse"+data.id,data.answer);
-     console.log("answerNasResponse "+data.answer);
+    
   })
 
   client.on('answerNeedOffer', function  name(data) {
@@ -264,7 +264,7 @@ io.on('connection', function (client) {
      io.emit("any","answerNeedOffer");
     //console.log(onlineUers);
     io.emit("answerNeedOffer"+data.id,data.answer);
-     console.log("answerNeedOffer "+data.answer);
+   
   })
 
 
@@ -274,7 +274,7 @@ io.on('connection', function (client) {
      io.emit("any","offerN");
     //console.log(onlineUers);
     io.emit("offerN"+data.id,data.offer);
-     console.log("offer N "+data.offer);
+    
   })
 
   client.on('answerN', function  name(data) {
@@ -282,7 +282,7 @@ io.on('connection', function (client) {
      io.emit("any","answerN");
     //console.log(onlineUers);
     io.emit("answerN"+data.id,data.answer);
-     console.log("answerN "+data.answer);
+     
   })
 
 
@@ -294,7 +294,7 @@ io.on('connection', function (client) {
      io.emit("any","any");
     //console.log(onlineUers);
     io.emit("accept"+data.id,data.id);
-     console.log("accept "+data.id);
+    
   })
 
   client.on('reject', function  name(data) {
@@ -302,21 +302,21 @@ io.on('connection', function (client) {
      io.emit("any","any");
     //console.log(onlineUers);
     io.emit("reject"+data.id,data.id);
-     console.log("reject "+data.id);
+    
   })
   client.on('callEnd', function  name(data) {
     //onlineUers[client.id] = data.userId;
      io.emit("any","any");
     //console.log(onlineUers);
     io.emit("callEnd"+data.id,data.id);
-     console.log("callEnd "+data.id);
+    
   })
   client.on('callCanceled', function  name(data) {
     //onlineUers[client.id] = data.userId;
      io.emit("any","callCanceled");
     //console.log(onlineUers);
     io.emit("callCanceled"+data.id,data.id);
-     console.log("callCanceled "+data.id);
+    
   })
 
   client.on('connect', function () {
@@ -334,7 +334,6 @@ io.on('connection', function (client) {
   client.on('setBusy', function  name(data) {
     //onlineUers[client.id] = data.userId;
      onlineUers.set(client.id,data.userId);
-    console.log("busy pressed");
     io.emit("busy",data.userId);
 
     // console.log(onlineUers);
@@ -343,7 +342,6 @@ io.on('connection', function (client) {
     //onlineUers[client.id] = data.userId;
      onlineUers.set(client.id,data.userId);
     //console.log(onlineUers);
-    console.log("away pressed");
     io.emit("away",data.userId);
     // console.log(onlineUers);
   })
@@ -464,7 +462,6 @@ function saveGrp(fileName,message,io) {
 
 fs.appendFile(fileNameFull, "[]", function (err) {
   if (err) throw err;
-  console.log('file created!');
   write();
 
 });
@@ -543,7 +540,6 @@ function getLastMessage(fileName,io) {
         
        
         io.emit(fileName,JSON.parse(data));
-        console.log(JSON.parse(data));
 
       });
 
@@ -575,7 +571,6 @@ function getMyFnds(fileName,io) {
     
 
       var allFndId = JSON.parse(data);
-      console.log(JSON.parse(data));
       var allFiles = [];
 
  for (const property in allFndId) {
@@ -592,13 +587,11 @@ for (var i = allFiles.length - 1; i >= 0; i--) {
   var path = allFiles[i];
      fs.exists(path, function(exists) {
    if(exists) {
-    console.log("exists" +path);
     // Create a file
     //read
      fs.readFileSync(path, function (err, data){
         
        responseArray.push(JSON.parse(data));
-       console.log("data");
       // console.log(fileNameForUser);
 
        // io.emit(fileName+"_profile",JSON.parse(data));
@@ -612,8 +605,6 @@ for (var i = allFiles.length - 1; i >= 0; i--) {
         
        
         io.emit(fileName+"_fnds",JSON.parse(data));
-        console.log("now res");
-        console.log(JSON.stringify(responseArray));
 
       });
 
@@ -622,7 +613,6 @@ for (var i = allFiles.length - 1; i >= 0; i--) {
   else {
     //emit empty
     io.emit(fileName+"_fnds",JSON.parse("[]"));
-    console.log("[]");
     
   }
 });
@@ -652,7 +642,6 @@ function getUserProfile(fileName,io) {
   else {
     //emit empty
     
-    console.log("{}");
     io.emit(fileName+"_profile",JSON.parse("{}"));
     
   }
@@ -680,7 +669,6 @@ function checkIfFnd(self,fnd,io) {
         
        
         io.emit(self+"fnd"+fnd, {"status":j.hasOwnProperty(fnd)});
-        console.log( {"status":j.hasOwnProperty(fnd)});
 
       });
 
@@ -689,7 +677,6 @@ function checkIfFnd(self,fnd,io) {
   else {
     //emit empty
     io.emit(self+"fnd"+fnd, {"status":false});
-        console.log( {"status":false});
     
   }
 });
@@ -706,7 +693,6 @@ function sendLast(id,body,partner) {
     var json = JSON.parse(data);
     //console.log(data);
     json[par]=body;
-    console.log(json);
    // json.push(JSON.stringify({par:body}));
     
 
@@ -716,7 +702,6 @@ function sendLast(id,body,partner) {
         console.log( "file not found");
       }
       fs.readFile(fileNameFullForLast, function (err, data){
-        console.log(JSON.parse(data));
         io.emit(id,JSON.parse(data));
        
        
@@ -737,7 +722,6 @@ console.log('file exists! for last');
 
 fs.appendFile(fileNameFullForLast, "{}", function (err) {
   if (err) throw err;
-  console.log('file created! for last');
   write();
 
 });
@@ -772,7 +756,6 @@ function saveProfileData(id,body,io) {
     
     fs.writeFile(fileNameFullForLast, JSON.stringify(body), function(err){
       if (err){
-        console.log( "file not found");
       }
       fs.readFile(fileNameFullForLast, function (err, data){
         console.log(JSON.parse(data));
@@ -795,7 +778,6 @@ function saveProfileData(id,body,io) {
     if(exists) {
     // Create a file
     write();
-    console.log('file exists! t');
    }
   else {
     // fs.writeFile(fileName,"[]");
@@ -816,7 +798,6 @@ function saveFriend(self,fnd) {
   function write(){
     fs.readFile(fileNameFullForLast, function (err, data) {
     var json = JSON.parse(data);
-    console.log(json);
     json[fnd]=fnd;
     console.log(json);
    // json.push(JSON.stringify({par:body}));
